@@ -1,0 +1,21 @@
+body {
+  background-color:linen
+}
+
+#app {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+.card {
+  background-color:darkseagreen;
+  text-align:center;
+  color:darkolivegreen
+  border:2px solid darkolivegreen;
+  
+}
