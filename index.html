@@ -9,10 +9,38 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <button type="button" class="btn btn-primary" id="all-btn">All</button>
-  <button type="button" class="btn btn-primary" id="cat-btn">Cats</button>
-  <button type="button" class="btn btn-primary" id="dinos-btn">Dinos</button>
-  <button type="button" class="btn btn-primary" id="dog-btn">Dogs</button>
+  <form>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="name" placeholder="Name" required>
+      <label fo   r="floatingInput">Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="color" placeholder="Color" required>
+      <label for="floatingInput">Color</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="specialSkill" placeholder="Special Skill" required>
+      <label for="floatingInput">Special Skill</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="type" placeholder="type" required>
+      <label for="floatingInput">Type</label>
+</div>
+    <div class="form-floating mb-3">
+      <input type="url" class="form-control" id="image" placeholder="image" required>
+      <label for="floatingInput">Image</label>
+    </div>
+    <button type="submit" class="btn btn-success" id="form-submit">Add Pet</button>
+  </form>
+  <div class="buttons">
+  <button type="button" class="btn btn-outline-success" id="all-btn">All</button>
+  <button type="button" class="btn btn-outline-success" id="cat-btn">Cats</button>
+  <button type="button" class="btn btn-outline-success" id="dinos-btn">Dinos</button>
+  <button type="button" class="btn btn-outline-success" id="dog-btn">Dogs</button>
+</div>
   <div id="app">
     
   </div>
