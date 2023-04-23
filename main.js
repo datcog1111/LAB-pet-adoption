@@ -273,11 +273,15 @@ const pets = [
     }
     return typeArray;
   }
+
+  
   
   const showAllButton = document.querySelector('#all-btn');
   const showCatButton = document.querySelector('#cat-btn');
   const showDinoButton = document.querySelector('#dinos-btn');
   const showDogButton = document.querySelector('#dog-btn');
+
+  
 
 
   showAllButton.addEventListener('click', () => {
@@ -298,26 +302,44 @@ const pets = [
     const dogType = filter(pets, 'dog');
     cardsOnDom(dogType);
   });
+  
+  const form = document.querySelector('form');
 
+  const createAnimal = (e) => {
+    e.preventDefault();
 
+    const newAnimalObj = {
+      id: pets.length + 1,
+      name: document.querySelector('#name').value,
+      color: document.querySelector('#color').value,
+      specialSkill: document.querySelector('#specialSkill').value,
+      type: document.querySelector('#type').value,
+      image: document.querySelector('#image').value,
+    }
 
+    pets.push(newAnimalObj);
+    cardsOnDom(pets);
+    form.reset();
+  }
+  form.addEventListener('submit', createAnimal);
+  
+const app = document.querySelector('#app');
 
-//   const targetingApp = document.querySelector("#app");
-//   console.log(targetingApp);
+app.addEventListener('click', (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
 
+    const index = pets.findIndex(e => e.id === Number(id));
 
-// let domString = "";
-// for (const pet of pets) {
-//   domString += `<div class="card" style="width: 18rem;">
-//   <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
-//   <div class="card-body">
-//     <h5 class="card-title">${pet.name}</h5>
-//     <p class="card-text"> Type:${pet.type}</p>
-//     <p>Skill: ${pet.specialSkill}</p>
-//     <p>Color: ${pet.color}</p>
-//   </div>
-// </div>`
-// }
+    pets.splice(index, 1);
 
-// console.log(domString);
-// targetingApp.innerHTML = domString;
+    cardsOnDom(pets);
+  }
+});
+
+const startApp = () => {
+  cardsOnDom(pets);
+
+}
+
+startApp();
