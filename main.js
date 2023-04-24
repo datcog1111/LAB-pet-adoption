@@ -256,8 +256,9 @@ const pets = [
            <p class="card-text"> Type:${pet.type}</p>
            <p>Skill: ${pet.specialSkill}</p>
           <p>Color: ${pet.color}</p>
+          <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
          </div>
-       </div>`
+       </div>`;
     }
     renderToDom('#app', domString);
   }
@@ -323,23 +324,27 @@ const pets = [
   }
   form.addEventListener('submit', createAnimal);
   
+
 const app = document.querySelector('#app');
 
-app.addEventListener('click', (e) => {
-  if (e.target.id.includes("delete")) {
-    const [, id] = e.target.id.split("--");
 
-    const index = pets.findIndex(e => e.id === Number(id));
+ app.addEventListener('click', (e) => {
 
-    pets.splice(index, 1);
+   if (e.target.id.includes("delete")) {
 
-    cardsOnDom(pets);
-  }
-});
+     const [, id] = e.target.id.split("--");
 
-const startApp = () => {
-  cardsOnDom(pets);
+     const index = pets.findIndex(e => e.id === Number(id));
 
-}
+     pets.splice(index, 1);
 
-startApp();
+     cardsOnDom(pets);
+   }
+ });
+
+ const startApp = () => {
+   cardsOnDom(pets);
+
+ }
+
+ startApp();

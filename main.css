@@ -26,6 +26,9 @@ form {
   flex-direction:column;
   max-width:40%;
   align-content:center;
+  height:450px;
+  margin-left:30%;
+  
 }
 
 .form-group {
