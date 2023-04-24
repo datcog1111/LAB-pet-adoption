@@ -256,6 +256,7 @@ const pets = [
            <p class="card-text"> Type:${pet.type}</p>
            <p>Skill: ${pet.specialSkill}</p>
           <p>Color: ${pet.color}</p>
+          <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
          </div>
        </div>`
     }
