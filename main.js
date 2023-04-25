@@ -315,7 +315,7 @@ const pets = [
       color: document.querySelector('#color').value,
       specialSkill: document.querySelector('#specialSkill').value,
       type: document.querySelector('#type').value,
-      image: document.querySelector('#image').value,
+      imageUrl: document.querySelector('#image').value,
     }
 
     pets.push(newAnimalObj);
